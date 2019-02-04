@@ -1,7 +1,7 @@
 # new-york-times-api
 
 ### Description
-I have created a service object model that takes data from New York Times Developers Network; specifically the movie reviews API and have created unit tests that test the individual datasets and their data types using rspec. I have also included tests that check character length and tests that include a subset of a string within a specific data point.
+I have created a service object model that takes data from New York Times Developers Network; specifically the movie reviews API and have created unit tests that test the individual datasets and their data types using rspec.
 
 ### Languages used
 Ruby
