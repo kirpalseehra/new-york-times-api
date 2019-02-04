@@ -1,4 +1,4 @@
-require_relative 'services/movie_reviews'
+require_relative 'services/movie_review'
 
 class NewYorkTimes
 

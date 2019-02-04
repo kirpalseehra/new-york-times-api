@@ -47,6 +47,6 @@ class MovieReview
   
 end
 
-test = MovieReview.new
-test.current_movie_reviews('')
-p test.retrieve_all_titles
+# test = MovieReview.new
+# test.current_movie_reviews('')
+# p test.retrieve_all_titles
