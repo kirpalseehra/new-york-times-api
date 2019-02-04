@@ -19,9 +19,31 @@ describe NewYorkTimes do
    end
 
    # tests for a boolean data type
-   it 'should return the has more as a boolean' do 
+   it 'should return the has_more as a Boolean' do 
     expect(@movie_review_service.retrieve_review_has_more).to be(true).or be(false)
    end
+
+   it 'should return the num_results as an Integer' do 
+    expect(@movie_review_service.retrieve_review_num_results).to be_kind_of(Integer)
+   end
+
+   it 'should return the review results as an Array' do 
+    expect(@movie_review_service.retrieve_review_results).to be_kind_of(Array)
+   end
+
+   it 'should return all the display titles as an Array' do 
+    expect(@movie_review_service.retrieve_all_titles).to be_kind_of(Array)
+   end
+
+   it 'should return all the display titles with Gladiator in it' do
+    expect(@movie_review_service.retrieve_all_titles).to include("Gladiator")
+   end
+
+   it 'should return individual display titles as a String' do
+    expect(@movie_review_service.retrieve_any_title).to be_kind_of(String)
+   end
+
+   
 
 
 

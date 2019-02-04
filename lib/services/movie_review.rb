@@ -44,9 +44,20 @@ class MovieReview
     title_loop
   end
 
-  
+  def retrieve_any_title
+    retrieve_all_titles[3]
+  end
+
+  def retrieve_all_mpaa_rating
+    mpaa_rating_loop = []
+    retrieve_review_results.each do |mpaa|
+      mpaa_rating_loop.push mpaa['mpaa_rating']
+    end
+    mpaa_rating_loop
+  end
+
 end
 
-# test = MovieReview.new
-# test.current_movie_reviews('')
-# p test.retrieve_all_titles
+test = MovieReview.new
+test.current_movie_reviews('')
+p test.retrieve_all_mpaa_rating
