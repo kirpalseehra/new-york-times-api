@@ -31,25 +31,71 @@ describe NewYorkTimes do
     expect(@movie_review_service.retrieve_review_results).to be_kind_of(Array)
    end
 
-   it 'should return all the display titles as an Array' do 
-    expect(@movie_review_service.retrieve_all_titles).to be_kind_of(Array)
+   it 'should return all the display titles as Strings' do 
+    @movie_review_service.retrieve_all_titles.each do |title| 
+      expect(title).to be_kind_of(String)
+    end
    end
 
-   it 'should return all the display titles with Gladiator in it' do
-    expect(@movie_review_service.retrieve_all_titles).to include("Gladiator")
+   it 'should return all the display titles with Gladiator in it' do 
+    @movie_review_service.retrieve_all_titles.each do |title| 
+      expect(title).to include("Gladiator")
+    end
    end
 
-   it 'should return individual display titles as a String' do
-    expect(@movie_review_service.retrieve_any_title).to be_kind_of(String)
+   it 'should return all the mpaa ratings as Strings' do
+    @movie_review_service.retrieve_all_mpaa_rating.each do |mpaa|
+      expect(mpaa).to be_kind_of(String)
+    end
    end
 
-   it 'should return all the mpaa ratings as an Array' do
-    expect(@movie_review_service.retrieve_all_mpaa_rating).to be_kind_of(Array)
+   it 'should return all the critics picks as Integers' do
+    @movie_review_service.retrieve_all_critics_pick.each do |critic|
+      expect(critic).to be_kind_of(Integer)
+    end
    end
 
-   it 'should return individual mpaa ratings as a String' do
-    expect(@movie_review_service.retrieve_any_title).to be_kind_of(String)
+   it 'should return all the bylines as Strings' do
+    @movie_review_service.retrieve_all_byline.each do |byline|
+      expect(byline).to be_kind_of(String)
+    end
    end
+
+  #  it 'should return individual byline as case insensitive' do
+  #   expect(@movie_review_service.retrieve_any_byline).to have_content(/'janet'/i)
+  #  end 
+
+   it 'should return all the headlines as Strings' do
+    @movie_review_service.retrieve_all_headline.each do |headline|
+      expect(headline).to be_kind_of(String)
+    end
+   end
+
+   it 'should return all the short summaries as Strings' do
+    @movie_review_service.retrieve_all_summary_short.each do |summary|
+      expect(summary).to be_kind_of(String)
+    end
+   end
+
+   it 'should return all the publication dates as Strings' do
+   @movie_review_service.retrieve_all_publication_date.each do |publication|
+      expect(publication).to be_kind_of(String)
+    end
+   end
+
+   it 'should return all the opening dates as Strings' do
+    @movie_review_service.retrieve_all_opening_date.each do |opening|
+      expect(opening).to be_kind_of(String) | be_nil
+    end
+   end
+
+   it 'should return all the updated dates as Strings' do
+    @movie_review_service.retrieve_all_date_updated.each do |updated| 
+      expect(updated).to be_kind_of(String)
+    end
+   end
+
+
 
 
 
