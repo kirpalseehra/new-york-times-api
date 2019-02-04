@@ -178,6 +178,14 @@ class MovieReview
     suggested_link_loop
   end
 
+  def retrieve_all_multimedia
+    multimedia_loop = []
+    retrieve_review_results.each do |multimedia|
+      multimedia_loop.push multimedia['multimedia']
+    end
+    multimedia_loop
+  end
+  
 end
 
 test = MovieReview.new

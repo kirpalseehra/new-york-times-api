@@ -134,5 +134,11 @@ describe NewYorkTimes do
     end
    end
 
+   it 'should return all the multimedia as null' do
+    @movie_review_service.retrieve_all_multimedia.each do |multimedia|
+      expect(multimedia).to be_nil
+    end
+   end
+
   end
 end
