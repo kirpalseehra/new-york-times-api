@@ -164,7 +164,6 @@ class MovieReview
     type_loop
   end
 
-
   def retrieve_all_url 
     url_loop = []
     retrieve_all_link.each do |url|
@@ -172,7 +171,6 @@ class MovieReview
     end
     url_loop
   end
-
 
   def retrieve_all_suggested_link_text 
     suggested_link_loop = []
@@ -189,9 +187,4 @@ class MovieReview
     end
     multimedia_loop
   end
-  
 end
-
-test = MovieReview.new
-test.current_movie_reviews('gladiator')
-p test.retrieve_review

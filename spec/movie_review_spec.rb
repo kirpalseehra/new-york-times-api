@@ -5,7 +5,7 @@ describe NewYorkTimes do
   context 'Tests for movie reviews' do
 
    before(:all) do
-    @movie_key = ENV['api_key']
+    @movie_key = ENV['API_KEY']
     @movie_review_service = NewYorkTimes.new.movie_review_service
     @movie_review_service.current_movie_reviews('gladiator')
    end
@@ -14,7 +14,7 @@ describe NewYorkTimes do
     expect(@movie_review_service.retrieve_review_status).to be_kind_of(String)
    end
 
-   it 'should return the copyright as an String' do 
+   it 'should return the copyright as a String' do 
     expect(@movie_review_service.retrieve_review_copyright).to be_kind_of(String)
    end
 
@@ -91,12 +91,6 @@ describe NewYorkTimes do
       expect(opening).to be_kind_of(String) | be_nil
     end
    end
-
-  #  it 'should return all the opening dates as 10 characters long' do
-  #   @movie_review_service.retrieve_all_opening_date.each do |opening|
-  #     expect(opening.length).to eq 10 | be_nil
-  #   end
-  #  end
 
    it 'should return all the updated dates as Strings' do
     @movie_review_service.retrieve_all_date_updated.each do |updated| 
