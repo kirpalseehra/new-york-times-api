@@ -152,8 +152,34 @@ class MovieReview
     link_loop
   end
 
+  def retrieve_all_type 
+    type_loop = []
+    retrieve_all_link.each do |type|
+      type_loop.push type['type']
+    end
+    type_loop
+  end
+
+
+  def retrieve_all_url 
+    url_loop = []
+    retrieve_all_link.each do |url|
+      url_loop.push url['url']
+    end
+    url_loop
+  end
+
+
+  def retrieve_all_suggested_link_text 
+    suggested_link_loop = []
+    retrieve_all_link.each do |suggested|
+      suggested_link_loop.push suggested['suggested_link_text']
+    end
+    suggested_link_loop
+  end
+
 end
 
 test = MovieReview.new
 test.current_movie_reviews('')
-p test.retrieve_all_link
+p test.retrieve_all_suggested_link_text

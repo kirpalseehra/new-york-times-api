@@ -110,8 +110,29 @@ describe NewYorkTimes do
     end
    end
 
+   it 'should return all the types as Strings' do
+    @movie_review_service.retrieve_all_type.each do |type|
+      expect(type).to be_kind_of(String)
+    end
+   end
 
+   it 'should return all the urls as Strings' do
+    @movie_review_service.retrieve_all_url.each do |url|
+      expect(url).to be_kind_of(String)
+    end
+   end
+
+   it 'should return all the urls that include .html' do
+    @movie_review_service.retrieve_all_url.each do |url|
+      expect(url).to include(".html")
+    end
+   end
+
+   it 'should return all the suggested links as Strings' do
+    @movie_review_service.retrieve_all_suggested_link_text.each do |suggested|
+      expect(suggested).to be_kind_of(String)
+    end
+   end
 
   end
-
 end
