@@ -2,14 +2,18 @@ require 'json'
 require 'httparty'
 require 'dotenv'
 
+# This is required in order to load the .env file from this file using the API KEY
+Dotenv.load('.env')
+
 class MovieReview
 
   include HTTParty
 
   base_uri 'https://api.nytimes.com'
 
-  def current_movie_reviews(movie_key)
-    @movie_review_request = JSON.parse(self.class.get("/svc/movies/v2/reviews/search.json?query=gladiator&api-key=tVjawWx5MnoSNJuisipioq59ZIE4qWnw").body)
+  def current_movie_reviews(movie_name)
+    api_key = ENV['API_KEY']
+    @movie_review_request = JSON.parse(self.class.get("/svc/movies/v2/reviews/search.json?query=#{movie_name}&api-key=#{api_key}").body)
   end
 
   def retrieve_review
@@ -189,5 +193,5 @@ class MovieReview
 end
 
 test = MovieReview.new
-test.current_movie_reviews('')
-p test.retrieve_all_suggested_link_text
+test.current_movie_reviews('gladiator')
+p test.retrieve_review
