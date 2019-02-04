@@ -144,8 +144,16 @@ class MovieReview
     retrieve_all_date_updated[2]
   end
 
+  def retrieve_all_link
+    link_loop = []
+    retrieve_review_results.each do |link|
+      link_loop.push link['link']
+    end
+    link_loop
+  end
+
 end
 
 test = MovieReview.new
 test.current_movie_reviews('')
-p test.retrieve_any_date_updated
+p test.retrieve_all_link

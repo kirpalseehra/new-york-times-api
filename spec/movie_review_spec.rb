@@ -61,10 +61,6 @@ describe NewYorkTimes do
     end
    end
 
-  #  it 'should return individual byline as case insensitive' do
-  #   expect(@movie_review_service.retrieve_any_byline).to have_content(/'janet'/i)
-  #  end 
-
    it 'should return all the headlines as Strings' do
     @movie_review_service.retrieve_all_headline.each do |headline|
       expect(headline).to be_kind_of(String)
@@ -83,11 +79,24 @@ describe NewYorkTimes do
     end
    end
 
+   # testing the length of the string is equal to 10 characters long 
+   it 'should return all the publication dates as 10 characters long' do
+    @movie_review_service.retrieve_all_publication_date.each do |publication|
+      expect(publication.length).to eq 10
+    end
+   end
+
    it 'should return all the opening dates as Strings' do
     @movie_review_service.retrieve_all_opening_date.each do |opening|
       expect(opening).to be_kind_of(String) | be_nil
     end
    end
+
+  #  it 'should return all the opening dates as 10 characters long' do
+  #   @movie_review_service.retrieve_all_opening_date.each do |opening|
+  #     expect(opening.length).to eq 10 | be_nil
+  #   end
+  #  end
 
    it 'should return all the updated dates as Strings' do
     @movie_review_service.retrieve_all_date_updated.each do |updated| 
@@ -95,12 +104,11 @@ describe NewYorkTimes do
     end
    end
 
-
-
-
-
-   
-
+   it 'should return all the updated dates as 19 characters long' do
+    @movie_review_service.retrieve_all_date_updated.each do |updated| 
+      expect(updated.length).to eq 19
+    end
+   end
 
 
 
