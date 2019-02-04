@@ -56,8 +56,12 @@ class MovieReview
     mpaa_rating_loop
   end
 
+  def retrieve_any_mpaa_rating
+    retrieve_all_mpaa_rating[3]
+  end
+
 end
 
 test = MovieReview.new
 test.current_movie_reviews('')
-p test.retrieve_all_mpaa_rating
+p test.retrieve_any_mpaa_rating

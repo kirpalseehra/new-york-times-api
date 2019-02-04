@@ -43,6 +43,16 @@ describe NewYorkTimes do
     expect(@movie_review_service.retrieve_any_title).to be_kind_of(String)
    end
 
+   it 'should return all the mpaa ratings as an Array' do
+    expect(@movie_review_service.retrieve_all_mpaa_rating).to be_kind_of(Array)
+   end
+
+   it 'should return individual mpaa ratings as a String' do
+    expect(@movie_review_service.retrieve_any_title).to be_kind_of(String)
+   end
+
+
+
    
 
 
